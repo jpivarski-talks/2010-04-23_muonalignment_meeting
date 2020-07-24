@@ -1,0 +1,98 @@
+\documentclass[compress]{beamer}
+\usepackage{ifthen,verbatim}
+
+\newcommand{\isnote}{}
+\xdefinecolor{lightyellow}{rgb}{1.,1.,0.25}
+\xdefinecolor{darkblue}{rgb}{0.1,0.1,0.7}
+
+%% Uncomment this to get annotations
+%% \def\notes{\addtocounter{page}{-1}
+%%            \renewcommand{\isnote}{*}
+%% 	   \beamertemplateshadingbackground{lightyellow}{white}
+%%            \begin{frame}
+%%            \frametitle{Notes for the previous page (page \insertpagenumber)}
+%%            \itemize}
+%% \def\endnotes{\enditemize
+%% 	      \end{frame}
+%%               \beamertemplateshadingbackground{white}{white}
+%%               \renewcommand{\isnote}{}}
+
+%% Uncomment this to not get annotations
+\def\notes{\comment}
+\def\endnotes{\endcomment}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{\mbox{ } \hfill
+\begin{minipage}{5.5 cm}
+\vspace{-0.75 cm} \small
+\end{minipage} \hfill
+\begin{minipage}{4.5 cm}
+\vspace{-0.75 cm} \small
+\begin{flushright}
+{Jim Pivarski \hspace{0.2 cm} \insertpagenumber\isnote/\pageref{numpages}}
+\end{flushright}
+\end{minipage}\mbox{\hspace{0.2 cm}}\includegraphics[height=1 cm]{../cmslogo} \hspace{0.1 cm} \includegraphics[height=1 cm]{../tamulogo} \hspace{0.01 cm} \vspace{-1.05 cm}}
+
+\begin{document}
+
+%% \begin{notes}
+%% \item This is the annotated version of my talk.
+%% \item If you want the version that I am presenting, download the one
+%% labeled ``slides'' on Indico (or just ignore these yellow pages).
+%% \item The annotated version is provided for extra detail and a written
+%% record of comments that I intend to make orally.
+%% \item Yellow notes refer to the content on the {\it previous} page.
+%% \item All other slides are identical for the two versions.
+%% \end{notes}
+
+\small
+
+\begin{frame}
+\frametitle{Status of beam-halo alignment}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l c c}
+Feature & in old? & in new? \\\hline
+Organized and maintainable & $\cdot$ & yes \\
+Linear track fits ($\phi = A + B z$) in CSC pair overlaps & yes & yes \\
+Slope ($B$) constrained to full-fit from all other stations & $\cdot$ & yes \\
+Fiducial chamber-volume cut & hacked & yes \\
+Histograms of everything & yes & yes \\
+Parallel-processing (``gather'' and ``align'' jobs) & $\cdot$ & yes \\
+Customizable fits (allow PG, HW constraints) & $\cdot$ & yes \\
+Combine ME1/1a and b & yes & untested \\
+Error analysis (weak and strong modes) & $\cdot$ & yes \\
+Full-workflow testing and debugging & yes & $\cdot$ \\
+Try Oleg's radius correction & $\cdot$ & $\cdot$ \\
+Documentation & $\cdot$ & $\cdot$ \\
+\end{tabular}
+\end{frame}
+
+%% \begin{frame}
+%% \frametitle{Outline}
+%% \begin{itemize}\setlength{\itemsep}{0.75 cm}
+%% \item 
+%% \end{itemize}
+%% %% \hspace{-0.83 cm} \textcolor{darkblue}{\Large Outline2}
+%% \end{frame}
+
+%% \section*{First section}
+%% \begin{frame}
+%% \begin{center}
+%% \Huge \textcolor{blue}{First section}
+%% \end{center}
+%% \end{frame}
+
+\begin{frame}
+\frametitle{New fitting feature}
+\vspace{-1 cm}
+\includegraphics[width=0.8\linewidth]{new_fitting_method.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Timescale}
+\includegraphics[width=\linewidth]{may_calendar.png}
+\label{numpages}
+\end{frame}
+
+\end{document}
